@@ -1,6 +1,6 @@
 import React from 'react';
 import './ImageGallery.css';
-import Image from '../assets/download.jpeg';
+import Image from '../assets/im1.jpeg';
 
 const ImageGallery: React.FC = () => {
     return (
