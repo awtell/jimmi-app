@@ -1,6 +1,5 @@
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
-import './components/ImageGallery.css';
 
 function App() {
   return (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './ImageGallery.css';
 import logo from '../assets/log.png'; // Make sure to replace this with the actual path to your logo
 
 const NavBar = () => {

@@ -1,11 +1,8 @@
-import React from 'react';
-import './ImageGallery.css';
 import NavBar from './NavBar';
 import ImageGallery from './ImageGallery';
 
 const HomePage = () => {
     return (<>
-        <NavBar />
         <ImageGallery />
         <div className="home-container">
             {/* <img
