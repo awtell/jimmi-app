@@ -1,3 +1,4 @@
+/* ImageGallery.css */
 body,
 html {
   margin: 0;
@@ -5,120 +6,45 @@ html {
   height: 100%;
   overflow: auto;
 }
+.carousel {
+  margin-top: 0; /* Ensure no space at the top of the carousel */
+}
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.carousel-item {
+  height: 100vh; /* For larger screens */
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  padding: 10px 20px;
-  z-index: 10;
-  color: white;
+  justify-content: center;
 }
 
-.navbar a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-.navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.image-fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.carousel-item img {
+  max-height: 100%;
+  max-width: 100%;
   object-fit: cover;
-  z-index: -1;
 }
-
-.content {
-  padding-top: 60px;
-  color: white;
-  text-align: center;
-}
-
-.home-container {
-  width: 100%;
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.img-fluid {
-  width: 100%;
-  height: auto;
+#carouselExampleIndicators {
+  margin-top: 0;
+  padding-top: 0;
+  z-index: -1; /* Set a lower z-index */
 }
 
-.navbar-logo {
-  height: 40px;
-  margin-right: auto;
+@media (max-width: 1200px) {
+  .carousel-item {
+    height: 75vh; /* Adjust height for medium screens */
+  }
 }
 
-.navbar-menu {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-toggle {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  background-color: #212121; /* Added background color */
-  padding: 10px; /* Added padding to make the background visible */
-  border-radius: 5px; /* Optional: added border-radius for rounded corners */
-}
-/* Media Queries for Responsiveness */
-@media (max-width: 767px) {
-  .navbar-menu {
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 50vh; /* Adjust height for small screens */
+  }
+  .carousel-indicators {
     display: none;
-    flex-direction: column;
-    width: 60%; /* Adjusted width to cover a part of the screen */
-    background-color: rgba(0, 0, 0, 0.8); /* Adjusted background color for transparency */
-    position: absolute;
-    top: 60px;
-    right: 20px; /* Position the menu slightly away from the edge */
-    padding: 20px 0; /* Adjusted padding */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Added box shadow for better visual effect */
-    border-radius: 15px; /* Added border radius for rounded corners */
-  }
-
-  .navbar-menu.active {
-    display: flex;
-  }
-
-  .navbar-menu a {
-    margin: 10px 0; /* Adjusted margin for better spacing */
-    text-align: center;
-    color: white; /* Adjusted text color */
-    font-size: 18px; /* Increased font size */
-    padding: 10px; /* Added padding */
-    text-decoration: none; /* Removed underline */
-    background-color: transparent; /* Removed background color */
-    border: none; /* Removed border */
-    transition: color 0.3s ease; /* Added transition for color change on hover */
-  }
-
-  .navbar-menu a:hover {
-    color: rgba(255, 255, 255, 0.7); /* Text color change on hover */
-  }
-
-  .navbar-toggle {
-    display: block;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    background-color: #212121; /* Removed background color */
-    padding: 10px; /* Added padding */
-    border: none; /* Removed border */
   }
 }

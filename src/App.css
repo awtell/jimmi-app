@@ -1,0 +1,13 @@
+/* App.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+}

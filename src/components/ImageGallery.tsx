@@ -1,15 +1,23 @@
 import React from 'react';
 import './ImageGallery.css';
-import Image from '../assets/im1.jpeg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-const ImageGallery: React.FC = () => {
+interface ImageGalleryProps {
+    images: string[];
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     return (
-        <div className="image-gallery">
-            <div className="main-content">
-                <div className="image-card">
-                    <img src={Image} className="img-fluid" alt="Carbon Design System" />
-                    <div className="image-text">Carbon Design System</div>
-                </div>
+        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+            <div className="carousel">
+            </div>
+            <div className="carousel-inner">
+                {images.map((image, index) => (
+                    <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                        <img src={image} className="d-block w-100" alt={`Image ${index + 1}`} />
+                    </div>
+                ))}
             </div>
         </div>
     );

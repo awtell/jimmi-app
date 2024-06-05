@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/log.png'; // Make sure to replace this with the actual path to your logo
+import './NavBar.css';
+import logo from '../assets/log.png';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,17 +9,17 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const nav = document.querySelector('.navbar') as HTMLElement;
-
       if (window.scrollY > 0) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    }
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -35,7 +36,7 @@ const NavBar = () => {
         <Link to="/contact">Contact Us</Link>
       </div>
       <div className="navbar-toggle" onClick={toggleMenu}>
-        {menuOpen ? '✖' : '☰'} {/* Conditional rendering of the toggle icon */}
+        {menuOpen ? '✖' : '☰'}
       </div>
     </nav>
   );
