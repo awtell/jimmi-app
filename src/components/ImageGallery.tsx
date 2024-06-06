@@ -2,6 +2,7 @@ import React from 'react';
 import './ImageGallery.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import RoomForm from './RoomForm';
 
 interface ImageGalleryProps {
     images: string[];
@@ -15,10 +16,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             <div className="carousel-inner">
                 {images.map((image, index) => (
                     <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                        <img src={image} className="d-block w-100" alt={`Image ${index + 1}`} />
+                        <img src={image} className="img-fluid" alt={`Image ${index + 1}`} />
                     </div>
                 ))}
             </div>
+            <RoomForm onSubmit={data => console.log(data)} />
+
         </div>
     );
 };
