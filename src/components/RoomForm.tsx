@@ -1,5 +1,7 @@
 import React from 'react';
 import './RoomForm.css';
+import im1 from '../assets/im1.jpeg';
+
 interface RoomFormProps {
   onSubmit: (data: RoomFormData) => void;
 }
@@ -17,12 +19,57 @@ const RoomForm: React.FC<RoomFormProps> = ({ onSubmit }) => {
     pricePerHour: '$9',
   });
 
+  const handleBooking = () => {
+    console.log('Clicked!');
+  };
+
+  const handleClick = () => {
+    console.log('Clicked!');
+  };
+
   return (
-    <div className="room-form">
-      <div className="capacity">{formData.capacity}</div>
-      <div className="right-side">
-        <div className="number">{formData.number}</div>
-        <div className="price">{formData.pricePerHour}</div>
+    <div className="room-form-container">
+      <h2 className="available-seats-title">Available seats</h2>
+      <div className="room-cards-container">
+        <div className="room-card" onClick={handleClick}>
+          <div className="image-container">
+            <img src={im1} alt="Room" className="room-image" />
+            <div className="overlay">
+              <div className="overlay-text">
+                <div className="room-number">Table {formData.number}</div>
+                <div className="room-capacity">Capacity: {formData.capacity}</div>
+                <div className="room-price">{formData.pricePerHour} per hour</div>
+              </div>
+            </div>
+          </div>
+          <button className="book-button" onClick={handleBooking}>Book Now</button>
+        </div>
+        <div className="room-card" onClick={handleClick}>
+          <div className="image-container">
+            <img src={im1} alt="Room" className="room-image" />
+            <div className="overlay">
+              <div className="overlay-text">
+                <div className="room-number">Table {formData.number}</div>
+                <div className="room-capacity">Capacity: {formData.capacity}</div>
+                <div className="room-price">{formData.pricePerHour} per hour</div>
+              </div>
+            </div>
+          </div>
+          <button className="book-button" onClick={handleBooking}>Book Now</button>
+        </div>
+        <div className="room-card" onClick={handleClick}>
+          <div className="image-container">
+            <img src={im1} alt="Room" className="room-image" />
+            <div className="overlay">
+              <div className="overlay-text">
+                <div className="room-number">Table {formData.number}</div>
+                <div className="room-capacity">Capacity: {formData.capacity}</div>
+                <div className="room-price">{formData.pricePerHour} per hour</div>
+              </div>
+            </div>
+          </div>
+          <button className="book-button" onClick={handleBooking}>Book Now</button>
+        </div>
       </div>
     </div>
   );

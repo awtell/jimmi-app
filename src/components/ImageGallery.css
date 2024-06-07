@@ -9,12 +9,11 @@ html {
 
 .carousel {
   margin-top: 0;
-  /* Ensure no space at the top of the carousel */
+  z-index: 0; /* Lower z-index */
 }
 
 .carousel-item {
   height: 50vh;
-  /* For larger screens */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +26,7 @@ html {
   width: 100%;
   object-fit: cover;
 }
+
 
 * {
   margin: 0;

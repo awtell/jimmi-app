@@ -1,32 +1,90 @@
-.room-form {
-    display: flex;
-    width: 100%;
-    height: 200px; /* adjust as needed */
-    border: 1px solid black;
+.room-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0; /* Adjusted padding */
+  background-color: #f9f9f9;
 }
 
-.capacity {
-    flex: 1;
-    border-right: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.available-seats-title {
+  margin: 20px 0;
+  font-size: 2.5em; /* Larger font for better visibility */
+  text-align: center;
+  color: #333;
 }
 
-.right-side {
-    flex: 1;
-    display: flex;
+.room-cards-container {
+  display: flex;
+  justify-content: center; /* Ensure even spacing */
+  flex-wrap: wrap;
+  width: 100%; /* Ensure container takes full width */
+}
+
+.room-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  width: 30%; /* Ensure cards take a percentage of the container width */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.image-container {
+  position: relative;
+}
+
+.room-image {
+  width: 100%;
+  height: 200px; /* Fixed height for uniform card size */
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-text {
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.book-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .room-cards-container {
     flex-direction: column;
-}
-
-.number, .price {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
-}
+  }
 
-.number {
-    border-bottom: 1px solid black;
+  .room-card {
+    width: 90%;
+  }
 }
