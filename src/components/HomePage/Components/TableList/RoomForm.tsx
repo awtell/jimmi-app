@@ -28,7 +28,7 @@ const RoomForm: React.FC<RoomFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="room-form-container">
+    <div id='tables' className="room-form-container">
     <h2 className="available-seats-title">Available Tables</h2>
     <h3 className="available-seats-subtitle">Select a table to book</h3>
     <div className="room-cards-container">

@@ -27,19 +27,61 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <img src={logo} alt="Logo" className="navbar-logo" />
-      <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About Us</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/contact">Contact Us</Link>
+    <header id="header" className="fixed-top d-flex align-items-center">
+      <div className="container d-flex align-items-center">
+        <div className="logo me-auto">
+          <Link to="/">
+            <img src={logo} alt="Lumia Logo" className="img-fluid" />
+          </Link>
+        </div>
+        <nav id="navbar" className={`navbar order-last order-lg-0 ${menuOpen ? 'navbar-mobile' : ''}`}>
+          <ul>
+            <li>
+              <Link className="nav-link scrollto" to="/RoomForm#tables">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link scrollto" to="#services">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link scrollto active" to="#portfolio">
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link scrollto" to="#testimonials">
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link scrollto" to="#contact">
+                Contact
+              </Link>
+            </li>
+          </ul>
+          <i className="bi bi-list mobile-nav-toggle" onClick={toggleMenu}></i>
+        </nav>
+
+        <div className="header-social-links d-flex align-items-center">
+          <a href="#" className="twitter">
+            <i className="bi bi-twitter"></i>
+          </a>
+          <a href="#" className="facebook">
+            <i className="bi bi-facebook"></i>
+          </a>
+          <a href="#" className="instagram">
+            <i className="bi bi-instagram"></i>
+          </a>
+          <a href="#" className="linkedin">
+            <i className="bi bi-linkedin"></i>
+          </a>
+        </div>
       </div>
-      <div className="navbar-toggle" onClick={toggleMenu}>
-        {menuOpen ? '✖' : '☰'}
-      </div>
-    </nav>
+    </header>
   );
-}
+};
 
 export default NavBar;
