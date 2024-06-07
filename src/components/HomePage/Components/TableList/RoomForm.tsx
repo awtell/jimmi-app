@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import './RoomForm.css';
 import im1 from '../../../../assets/im1.jpeg';
 
 interface RoomFormProps {
   onSubmit: (data: RoomFormData) => void;
+  ref: React.RefObject<HTMLDivElement>;
 }
 
 interface RoomFormData {
@@ -12,7 +13,7 @@ interface RoomFormData {
   pricePerHour: string;
 }
 
-const RoomForm: React.FC<RoomFormProps> = ({ onSubmit }) => {
+const RoomForm = forwardRef<HTMLDivElement, RoomFormProps>(({onSubmit}, roomRef) => {
   const [formData, setFormData] = React.useState<RoomFormData>({
     capacity: '123',
     number: '51',
@@ -28,7 +29,8 @@ const RoomForm: React.FC<RoomFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div id='tables' className="room-form-container">
+    <div id='tables' className="room-form-container"
+    ref={roomRef}>
     <h2 className="available-seats-title">Available Tables</h2>
     <h3 className="available-seats-subtitle">Select a table to book</h3>
     <div className="room-cards-container">
@@ -74,6 +76,7 @@ const RoomForm: React.FC<RoomFormProps> = ({ onSubmit }) => {
     </div>
   </div>
 );
-};
+}
+);
 
 export default RoomForm;

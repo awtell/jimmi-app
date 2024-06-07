@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../assets/log.png';
 
-const NavBar = () => {
+type NavBarProps = {
+  onPressItem: (item: string) => void;
+};
+
+const NavBar = ({onPressItem}: NavBarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -37,7 +41,8 @@ const NavBar = () => {
         <nav id="navbar" className={`navbar order-last order-lg-0 ${menuOpen ? 'navbar-mobile' : ''}`}>
           <ul>
             <li>
-              <Link className="nav-link scrollto" to="/RoomForm#tables">
+              <Link className="nav-link scrollto" 
+              to="#hero" onClick={() => onPressItem('Home')}>
                 About
               </Link>
             </li>
