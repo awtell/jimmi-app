@@ -7,22 +7,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: #FFF9D0;
   padding: 10px 40px;
   /* Adjusted padding */
   z-index: 1;
   /* High z-index to ensure it overlays other elements */
-  color: white;
+
   transition: background-color 0.3s ease;
 }
 
-#carouselExampleIndicators {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-}
 
 .navbar.scrolled {
   background-color: rgba(0, 0, 0, 0.5);
@@ -43,14 +36,14 @@
 .navbar-menu a {
   margin-left: 20px;
   text-decoration: none;
-  color: white;
+  color: darkgray;
   font-weight: bold;
 }
 
 .navbar-menu.active {
   display: flex;
   flex-direction: column;
-  background-color: rgba(238, 245, 255, 0.5); /* Match the background color of the navbar-toggle */
+  background-color: rgba(238, 245, 255, 0.5); /* Light white background with some transparency */
   position: absolute;
   top: 60px;
   right: 20px;

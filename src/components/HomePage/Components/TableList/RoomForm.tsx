@@ -1,6 +1,6 @@
 import React from 'react';
 import './RoomForm.css';
-import im1 from '../assets/im1.jpeg';
+import im1 from '../../../../assets/im1.jpeg';
 
 interface RoomFormProps {
   onSubmit: (data: RoomFormData) => void;
