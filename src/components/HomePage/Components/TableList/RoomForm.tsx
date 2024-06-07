@@ -29,50 +29,51 @@ const RoomForm: React.FC<RoomFormProps> = ({ onSubmit }) => {
 
   return (
     <div className="room-form-container">
-      <h2 className="available-seats-title">Available seats</h2>
-      <div className="room-cards-container">
-        <div className="room-card" onClick={handleClick}>
-          <div className="image-container">
-            <img src={im1} alt="Room" className="room-image" />
-            <div className="overlay">
-              <div className="overlay-text">
-                <div className="room-number">Table {formData.number}</div>
-                <div className="room-capacity">Capacity: {formData.capacity}</div>
-                <div className="room-price">{formData.pricePerHour} per hour</div>
-              </div>
+    <h2 className="available-seats-title">Available Tables</h2>
+    <h3 className="available-seats-subtitle">Select a table to book</h3>
+    <div className="room-cards-container">
+      <div className="room-card" onClick={handleClick}>
+        <div className="image-container">
+          <img src={im1} alt="Room" className="room-image" />
+          <div className="overlay">
+            <div className="overlay-text">
+              <div className="room-number">Table {formData.number}</div>
+              <div className="room-capacity">Capacity: {formData.capacity}</div>
+              <div className="room-price">{formData.pricePerHour} per hour</div>
             </div>
           </div>
-          <button className="book-button" onClick={handleBooking}>Book Now</button>
         </div>
-        <div className="room-card" onClick={handleClick}>
-          <div className="image-container">
-            <img src={im1} alt="Room" className="room-image" />
-            <div className="overlay">
-              <div className="overlay-text">
-                <div className="room-number">Table {formData.number}</div>
-                <div className="room-capacity">Capacity: {formData.capacity}</div>
-                <div className="room-price">{formData.pricePerHour} per hour</div>
-              </div>
+        <button className="book-button" onClick={handleBooking}>Book Now</button>
+      </div>
+      <div className="room-card" onClick={handleClick}>
+        <div className="image-container">
+          <img src={im1} alt="Room" className="room-image" />
+          <div className="overlay">
+            <div className="overlay-text">
+              <div className="room-number">Table {formData.number}</div>
+              <div className="room-capacity">Capacity: {formData.capacity}</div>
+              <div className="room-price">{formData.pricePerHour} per hour</div>
             </div>
           </div>
-          <button className="book-button" onClick={handleBooking}>Book Now</button>
         </div>
-        <div className="room-card" onClick={handleClick}>
-          <div className="image-container">
-            <img src={im1} alt="Room" className="room-image" />
-            <div className="overlay">
-              <div className="overlay-text">
-                <div className="room-number">Table {formData.number}</div>
-                <div className="room-capacity">Capacity: {formData.capacity}</div>
-                <div className="room-price">{formData.pricePerHour} per hour</div>
-              </div>
+        <button className="book-button" onClick={handleBooking}>Book Now</button>
+      </div>
+      <div className="room-card" onClick={handleClick}>
+        <div className="image-container">
+          <img src={im1} alt="Room" className="room-image" />
+          <div className="overlay">
+            <div className="overlay-text">
+              <div className="room-number">Table {formData.number}</div>
+              <div className="room-capacity">Capacity: {formData.capacity}</div>
+              <div className="room-price">{formData.pricePerHour} per hour</div>
             </div>
           </div>
-          <button className="book-button" onClick={handleBooking}>Book Now</button>
         </div>
+        <button className="book-button" onClick={handleBooking}>Book Now</button>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default RoomForm;

@@ -2,35 +2,62 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0; /* Adjusted padding */
+  padding: 20px 0;
   background-color: #f9f9f9;
 }
 
 .available-seats-title {
-  margin: 20px 0;
-  font-size: 2.5em; /* Larger font for better visibility */
+  margin-top: 35px;
+  margin-bottom: auto;
+  font-size: 2.5em;
   text-align: center;
   color: #333;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.available-seats-subtitle {
+  margin: 10px 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 35px;
 }
 
 .room-cards-container {
   display: flex;
-  justify-content: center; /* Ensure even spacing */
+  justify-content: center;
   flex-wrap: wrap;
-  width: 100%; /* Ensure container takes full width */
+  width: 100%;
 }
 
 .room-card {
-  border: 1px solid #ccc;
+  border: 5px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 10px;
-  width: 30%; /* Ensure cards take a percentage of the container width */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  width: 30%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 8px 8px rgba(0, 0, 0, 0.22);
   background-color: #fff;
+  transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.room-card:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35), 0 12px 12px rgba(0, 0, 0, 0.3);
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.room-card:first-child {
+  margin-left: 20px; /* Adjust the value as needed */
+}
+
+.room-card:last-child {
+  margin-right: 20px; /* Adjust the value as needed */
 }
 
 .image-container {
@@ -39,7 +66,7 @@
 
 .room-image {
   width: 100%;
-  height: 200px; /* Fixed height for uniform card size */
+  height: 200px;
   object-fit: cover;
 }
 
@@ -86,5 +113,13 @@
 
   .room-card {
     width: 90%;
+  }
+
+  .room-card:first-child {
+    margin-left: 0;
+  }
+
+  .room-card:last-child {
+    margin-right: 0;
   }
 }
