@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../assets/log.png';
 
-
+// import boxicons from '../../assets/bootstrap-icons/fonts/boxicons.min.css';
+// import '../../../assets/bootstrap-icons/fonts/bootstrap-icons.css';
+// import '../../../assets/vendor/boxicons/css/boxicons.min.css';
+// import '../../../assets/vendor/glightbox/css/glightbox.min.css';
+// import '../../assets/vendor/swiper/swiper-bundle.min.css';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,12 +71,12 @@ const NavBar = () => {
           {/* <i className="bi bi-list mobile-nav-toggle" onClick={toggleMenu}></i> */}
         </nav>
 
-        {/* <div className="header-social-links d-flex align-items-center">
+        <div className="header-social-links d-flex align-items-center">
           <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
           <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
           <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
           <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
-        </div> */}
+        </div>
 
       </div>
     </header>
