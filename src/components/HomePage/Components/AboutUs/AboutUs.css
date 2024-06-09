@@ -13,15 +13,18 @@
     list-style: none;
     padding: 0;
     font-size: 15px;
+    color: #848484;
   }
   
   .about ul li+li {
     margin-top: 10px;
+
   }
   
   .about ul li {
     position: relative;
     padding-left: 26px;
+
   }
   
   .about ul i {
@@ -30,6 +33,7 @@
     top: 0;
     font-size: 22px;
     color: #3498db;
+  
   }
   
   .about .icon-boxes {
