@@ -16,9 +16,9 @@ const NavBar = () => {
     const handleScroll = () => {
       const nav = document.querySelector('#header') as HTMLElement;
       if (window.scrollY > 0) {
-        nav.classList.add('scrolled');
+        nav.classList.add('header-scrolled');
       } else {
-        nav.classList.remove('scrolled');
+        nav.classList.remove('header-scrolled');
       }
     };
 
@@ -27,12 +27,6 @@ const NavBar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-
 
   return (
     <header id="header" className="header fixed-top d-flex align-items-center">
@@ -49,7 +43,7 @@ const NavBar = () => {
             <li><a className="nav-link scrollto" href="#services">Services</a></li>
             <li><a className="nav-link scrollto " href="#portfolio">Contact Us</a></li>
           </ul>
-          <i className="bi bi-list mobile-nav-toggle" onClick={toggleMenu}></i>
+          <i className="bi bi-list mobile-nav-toggle"></i>
         </nav>
 
         <div className="header-social-links d-flex align-items-center">
