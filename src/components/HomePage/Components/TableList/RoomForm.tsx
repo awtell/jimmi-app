@@ -4,7 +4,6 @@ import im1 from '../../../../assets/im1.jpeg';
 
 interface RoomFormProps {
   onSubmit: (data: RoomFormData) => void;
-  ref: React.RefObject<HTMLDivElement>;
 }
 
 interface RoomFormData {
@@ -14,7 +13,7 @@ interface RoomFormData {
 }
 
 const RoomForm = React.forwardRef<HTMLDivElement, RoomFormProps>((props, ref) => {
-  const [formData, setFormData] = React.useState<RoomFormData>({
+  const [formData] = React.useState<RoomFormData>({
     capacity: '123',
     number: '51',
     pricePerHour: '$9',

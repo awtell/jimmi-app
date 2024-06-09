@@ -2,13 +2,12 @@ import './AboutUs.css';
 import im1 from '../../../../assets/im1.jpeg';
 const AboutUs = () => {
 
-    return (
-        <section id="about" className="about">
+  return (
+    <section id="about" className="about">
       <div className="container">
-
         <div className="row">
           <div className="col-lg-6">
-            <img src={im1} className="img-fluid" alt=""/>
+            <img src={im1} className="img-fluid" alt="" />
           </div>
           <div className="col-lg-6 pt-4 pt-lg-0">
             <h3>About Us</h3>
@@ -37,8 +36,7 @@ const AboutUs = () => {
       </div>
     </section>
 
-    )
+  )
 }
-
 
 export default AboutUs;

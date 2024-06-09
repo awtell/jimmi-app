@@ -1,21 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import RoomForm from './Components/TableList/RoomForm';
 import im1 from '../../assets/im1.jpeg';
 import im2 from '../../assets/im2.jpeg';
 import ImageGallery from './Components/ImageGallery/ImageGallery';
 import AboutUs from './Components/AboutUs/AboutUs';
-import WhatWeDo from './WhatWeDo/WhatWeDo';
+import WhatWeDo from './Components/WhatWeDo/WhatWeDo';
+import Footer from './Components/Footer/Footer';
 
 const HomePage: React.FC = () => {
-
-    const roomFormRef = useRef<HTMLDivElement>(null);
-
-    const scrollToRoomForm = () => {
-        console.log("Scrolling to room form");
-        roomFormRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-
     return (
         <>
             <div>
@@ -26,12 +19,13 @@ const HomePage: React.FC = () => {
                 <WhatWeDo />
             </div>
             <div>
-                <RoomForm
-                    ref={roomFormRef}
-                    onSubmit={data => console.log("Submitted")} />
+                <RoomForm onSubmit={data => console.log("Submitted")} />
             </div>
             <div>
                 <AboutUs />
+            </div>
+            <div>
+                <Footer />
             </div>
         </>
     );

@@ -32,7 +32,6 @@ h6 {
   height: 70px;
   transition: all 0.5s;
   z-index: 997;
-  transition: all 0.5s;
   background: transparent;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
