@@ -232,7 +232,7 @@ h6 {
 }
 
 .navbar-mobile {
-  position: fixed;
+  position: fixed !important;
   overflow: hidden;
   top: 0;
   right: 0;
@@ -241,6 +241,7 @@ h6 {
   background: rgba(33, 38, 42, 0.9);
   transition: 0.3s;
   z-index: 999;
+  
 }
 
 .navbar-mobile .mobile-nav-toggle {
