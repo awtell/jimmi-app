@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import RoomForm from './Components/TableList/RoomForm';
 import im1 from '../../assets/im1.jpeg';
@@ -14,17 +14,13 @@ const HomePage: React.FC = () => {
             <div>
                 <NavBar />
                 <ImageGallery images={[im1, im2]} />
-            </div>
-            <div>
+        
                 <WhatWeDo />
-            </div>
-            <div>
+           
                 <RoomForm onSubmit={data => console.log("Submitted")} />
-            </div>
-            <div>
+     
                 <AboutUs />
-            </div>
-            <div>
+       
                 <Footer />
             </div>
         </>

@@ -9,30 +9,20 @@ import '../../assets/vendor/swiper/swiper-bundle.min.css';
 import '../../assets/vendor/bootstrap-icons/bootstrap-icons.css';
 
 const NavBar = () => {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const nav = document.querySelector('#header') as HTMLElement;
-      if (window.scrollY > 0) {
-        nav.classList.add('header-scrolled');
-      } else {
-        nav.classList.remove('header-scrolled');
-      }
-    };
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // console.log('isScrolled:', isScrolled); // Debugging
+
   return (
-    <header id="header" className="header fixed-top d-flex align-items-center">
+    <header id="header" className={`fixed-top d-flex align-items-center ${isScrolled ? 'header-scrolled' : 'transparent-bg'}`}>
       <div className="container d-flex align-items-center">
         <div className="logo me-auto">
           <Link to="/">
@@ -48,7 +38,6 @@ const NavBar = () => {
           </ul>
           <i className={`bi ${menuOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} onClick={toggleMenu}></i>
         </nav>
-
         <div className="header-social-links d-flex align-items-center">
           <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
           <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
