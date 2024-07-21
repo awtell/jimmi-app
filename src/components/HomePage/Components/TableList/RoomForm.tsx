@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RoomForm.css';
 import im1 from '../../../../assets/im1.jpeg';
 
@@ -13,6 +14,8 @@ interface RoomFormData {
 }
 
 const RoomForm = React.forwardRef<HTMLDivElement, RoomFormProps>((props, ref) => {
+  const navigate = useNavigate();
+
   const [formData] = React.useState<RoomFormData>({
     capacity: '123',
     number: '51',
@@ -21,18 +24,18 @@ const RoomForm = React.forwardRef<HTMLDivElement, RoomFormProps>((props, ref) =>
 
   const handleBooking = () => {
     console.log('Clicked!');
+    props.onSubmit(formData);
+    navigate('/booking'); // Navigate to the Booking page
   };
 
   return (
-    <section id='tables' className="room-form-container">
+    <section id="tables" className="room-form-container">
       <div className="container">
-
         <div className="section-title">
           <h2>Available Tables</h2>
           <p>Book Your Table Now</p>
         </div>
         <div className="row">
-
           <div className="room-cards-container">
             {[...Array(5)].map((_, index) => (
               <div className="room-card" key={index} onClick={handleBooking}>
@@ -52,9 +55,7 @@ const RoomForm = React.forwardRef<HTMLDivElement, RoomFormProps>((props, ref) =>
           </div>
         </div>
       </div>
-
-
-    </section >
+    </section>
   );
 });
 

@@ -8,8 +8,6 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
-
 .available-seats-subtitle {
   margin: 10px 0;
   font-size: 1.5em;
@@ -21,10 +19,8 @@
 
 .room-cards-container {
   margin: 0 auto;
-  width: 64px;
   display: flex;
   justify-content: center;
-  /* Change this to flex-start to align to the left */
   flex-wrap: wrap;
   width: 100%;
   padding: 30px 20px;
@@ -32,6 +28,7 @@
 }
 
 .room-card {
+  flex: 0 1 calc(33.333% - 20px); /* Adjusted to fit three cards in a row with some margin */
   border: 5px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
@@ -44,14 +41,11 @@
   transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-
-
 .room-card:hover {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35), 0 12px 12px rgba(0, 0, 0, 0.3);
   border-color: #3498db;
   transform: scale(1.05);
 }
-
 
 .image-container {
   position: relative;
